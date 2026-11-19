@@ -44,7 +44,7 @@ def get_todos():
     return functions.get_todos()
 
 
-@app.patch("/todos/{todo_id}", response_model=TodoResponse)
+@app.patch("/todo-list/{todo_id}", response_model=TodoResponse)
 def update_todo(todo_id: int, data: TodoUpdate):
     changes = data.model_dump(exclude_none=True)  # keep only the fields that were sent
 
